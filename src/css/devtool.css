@@ -1,0 +1,126 @@
+/* ================= DEV TOOLS – TECH CARD EFFECT ================= */
+* 
+
+.dev-tools-section{
+  padding-top: 100px;      /* Big top margin */
+  padding-bottom: 100px;   /* Big bottom margin */
+  background: #e8dcfa;     /* subtle background */
+
+}
+
+
+.tool-card {
+  position: relative;
+  background: rgba(157, 201, 238, 0.95);
+  border-radius: 20px;
+  padding: 32px 20px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* TECH GLOW BORDER */
+.tool-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1.5px;
+  background: linear-gradient(
+    135deg,
+    transparent,
+    rgba(88, 130, 255, 0.9),
+    transparent
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* ICON */
+.tool-card img {
+  width: 64px;
+  margin-bottom: 12px;
+  transition: transform 0.35s ease;
+}
+
+/* TITLE */
+/* .tool-card h5 {
+  color: #0b1a44;
+  font-weight: 600;
+  margin: 0;
+} */
+
+.tool-card h5 {
+  color: #0b1a44;
+  font-weight: 600;
+  margin: 0;
+  min-height: 38px; /* forces equal visual width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* SCAN GLOW */
+.tool-card::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(88, 130, 255, 0.12),
+    transparent
+  );
+}
+
+/* HOVER EFFECTS */
+.tool-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(88, 130, 255, 0.35);
+}
+
+.tool-card:hover::before {
+  opacity: 1;
+}
+
+.tool-card:hover::after {
+  animation: scanMove 1.2s ease;
+}
+
+.tool-card:hover img {
+  transform: translateY(-6px) scale(1.05);
+}
+
+/* SCAN ANIMATION */
+@keyframes scanMove {
+  0% {
+    top: -120%;
+  }
+  100% {
+    top: 120%;
+  }
+}
+
+
+
+
+
+
+
+
+
+

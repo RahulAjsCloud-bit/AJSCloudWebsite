@@ -1,0 +1,142 @@
+/* ================================
+   GLOBAL
+================================ */
+:root {
+  /* --header-height: 80px; adjust if header height changes */
+  --header-height: 76px; /* adjust if header height changes */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background-color: #f8fafc;
+  padding-top: var(--header-height); /* space for fixed header */
+}
+
+/* ================================
+   CONTAINER
+================================ */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================================
+   STORE SECTION
+================================ */
+.store-section {
+  padding: 60px 0;
+}
+
+.store-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ================================
+   CARD LAYOUT
+================================ */
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* ############################################################################################# */
+/* ================================
+   CAROUSEL HEIGHT CONTROL
+================================ */
+
+/* Home page – 75% viewport height */
+.carousel-full {
+  height: calc(75vh - var(--header-height));
+  min-height: 420px;
+  overflow: hidden;
+}
+
+/* Other pages – smaller hero */
+.carousel-half {
+  height: 40vh;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+/* Make carousel fill wrapper */
+.carousel-full .carousel,
+.carousel-half .carousel,
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ================================
+   MOBILE TUNING
+================================ */
+@media (max-width: 768px) {
+  .carousel-full {
+    height: calc(85vh - var(--header-height)); /* slightly taller on mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background-color: #f8fafc;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.store-section {
+  padding: 60px 0;
+}
+
+.store-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+/* ############################################################################################# */
+ 

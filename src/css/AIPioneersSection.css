@@ -1,0 +1,144 @@
+.ai-section {
+  background: #0a0a0a;
+  color: #ffffff;
+  padding: 100px 20px;
+  overflow: hidden;
+}
+
+.ai-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.ai-content {
+  flex: 1;
+}
+
+.ai-subtitle {
+  color: #00d4ff;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ai-title {
+  font-size: 56px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.ai-title span {
+  color: #00d4ff;
+}
+
+.ai-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #bdbdbd;
+  margin-bottom: 20px;
+}
+
+.ai-btn {
+  margin-top: 20px;
+  background: #00d4ff;
+  color: #000;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.ai-btn:hover {
+  background: #00b7dc;
+}
+
+.ai-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.glow-circle {
+  width: 350px;
+  height: 350px;
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 50%;
+  filter: blur(100px);
+  position: absolute;
+}
+
+.stats-card {
+  position: relative;
+  background: linear-gradient(135deg, #00d4ff, #005eff);
+  padding: 2px;
+  border-radius: 24px;
+  z-index: 2;
+}
+
+.stats-grid {
+  background: #111111;
+  border-radius: 22px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.stat-box {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+}
+
+.stat-box h3 {
+  font-size: 32px;
+  color: #00d4ff;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .ai-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ai-title {
+    font-size: 42px;
+  }
+
+  .ai-visual {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ai-title {
+    font-size: 34px;
+  }
+
+  .ai-description {
+    font-size: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

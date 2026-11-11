@@ -1,0 +1,180 @@
+/* =========================================================
+   WHY AJS CLOUD SECTION
+========================================================= */
+
+.whyajscloud-section {
+  background: linear-gradient(
+    180deg,
+    #03111f 0%,
+    #05172a 50%,
+    #071d33 100%
+  );
+
+  padding: 80px 30px 100px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.whyajscloud-section::before {
+  content: "";
+  position: absolute;
+  top: -250px;
+  right: -250px;
+  width: 500px;
+  height: 500px;
+  background: rgba(45, 212, 191, 0.08);
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.whyajscloud-section .container-fluid {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.whyajscloud-header {
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto 70px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: rgba(45, 212, 191, 0.2);
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.whyajscloud-header h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.tagline {
+  color: #d7e2f0;
+  font-size: 1.3rem;
+  line-height: 2;
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.whyajscloud-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.service-card {
+  background: rgba(8, 18, 55, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 24px;
+
+  min-height: 340px;
+
+  padding: 45px 28px;
+
+  text-align: center;
+
+  transition: all 0.35s ease;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #2dd4bf;
+
+  box-shadow: 0 20px 45px rgba(45, 212, 191, 0.15);
+}
+
+.stat-number {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ecfc5c;
+  line-height: 1;
+  margin-bottom: 28px;
+}
+
+.service-card h4 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  min-height: 70px;
+  margin-bottom: 20px;
+}
+
+.service-card p {
+  color: #dbe4f0;
+  font-size: 1rem;
+  line-height: 2;
+  margin: 0;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+  .whyajscloud-header h2 {
+    font-size: 3rem;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .whyajscloud-section {
+    padding: 60px 20px;
+  }
+
+  .whyajscloud-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .service-card {
+    min-height: auto;
+    padding: 32px 22px;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+  }
+
+  .service-card h4 {
+    min-height: auto;
+    font-size: 1.15rem;
+  }
+}

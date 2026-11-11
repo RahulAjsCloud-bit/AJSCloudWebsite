@@ -1,0 +1,62 @@
+/* =========================
+   Industry Page - Financial Services
+========================= */
+
+.industry-page {
+  width: 100%;
+}
+
+/* Common section styling */
+.industry-section {
+  min-height: 100vh; /* full screen height */
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+}
+
+/* Section backgrounds */
+.section-one {
+  background: #0d6efd;
+  color: #ffffff;
+}
+
+.section-two {
+  background: #f8f9fa;
+  color: #222;
+}
+
+.section-three {
+  background: #212529;
+  color: #ffffff;
+}
+
+.section-four {
+  background: #e9f5ee;
+  color: #222;
+}
+
+/* Typography */
+.industry-section h1,
+.industry-section h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.industry-section p {
+  font-size: 18px;
+  max-width: 800px;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .industry-section h1,
+  .industry-section h2 {
+    font-size: 30px;
+  }
+
+  .industry-section p {
+    font-size: 16px;
+  }
+}

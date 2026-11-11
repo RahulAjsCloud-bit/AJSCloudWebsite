@@ -1,0 +1,332 @@
+/* ============================= */
+/* EXPERTISE SECTION – FULL CSS */
+/* ============================= */
+
+.expertise-section {
+  padding-top: 100px;      /* Big top margin */
+  padding-bottom: 100px;   /* Big bottom margin */
+  background: #c0bdee;     /* subtle background */
+}
+
+
+
+
+.expertise-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;     /* space between title and cards */
+  text-align: center;       /* center the title */
+}
+
+/* ============================= */
+/* SECTOR CARD – ADVANCED */
+/* ============================= */
+
+.sector-card {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff, #f6f7fb);
+  border-radius: 20px;
+  padding: 36px 22px;
+  text-align: center;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.45s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+  margin-bottom: 40px; /* spacing below each card */
+}
+
+/* 🌈 Animated gradient border */
+.sector-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    #6a11cb,
+    #2575fc,
+    #00f2fe,
+    #6a11cb
+  );
+  background-size: 300% 300%;
+  animation: borderMove 6s linear infinite;
+  opacity: 0;
+  z-index: 0;
+}
+
+/* Mask inner area */
+.sector-card::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f6f7fb);
+  z-index: 1;
+}
+
+/* ============================= */
+/* HOVER MAGIC */
+/* ============================= */
+
+.sector-card:hover {
+  transform: perspective(900px) rotateX(8deg) translateY(-16px);
+  box-shadow: 0 30px 70px rgba(37, 117, 252, 0.35);
+}
+
+.sector-card:hover::before {
+  opacity: 1;
+}
+
+/* ============================= */
+/* ICON */
+/* ============================= */
+
+.sector-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 2;
+
+  filter: grayscale(100%) brightness(0.7);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.sector-card:hover .sector-icon {
+  filter: none;
+  transform: translateZ(40px) scale(1.25);
+}
+
+/* 🔥 Glow pulse */
+.sector-icon::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(37, 117, 252, 0.45),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.sector-card:hover .sector-icon::after {
+  opacity: 1;
+}
+
+/* ============================= */
+/* TEXT */
+/* ============================= */
+
+.sector-card p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  z-index: 2;
+  transform: translateY(6px);
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.sector-card:hover p {
+  transform: translateY(0);
+  color: #14154a;
+}
+
+/* ============================= */
+/* KEYFRAMES */
+/* ============================= */
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ============================= */
+/* GRID GAP FIX (IMPORTANT) */
+/* ============================= */
+
+/* Extra vertical spacing so hover lift doesn't overlap */
+.sector-card {
+  margin-bottom: 40px;
+}
+
+/* Optional: increase Bootstrap row vertical gap */
+.expertise-section .row {
+  row-gap: 48px;  /* bigger gap for cards */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.sector-card {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff, #f6f7fb);
+  border-radius: 20px;
+  padding: 36px 22px;
+  text-align: center;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.45s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.sector-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    #6a11cb,
+    #2575fc,
+    #00f2fe,
+    #6a11cb
+  );
+  background-size: 300% 300%;
+  animation: borderMove 6s linear infinite;
+  opacity: 0;
+  z-index: 0;
+}
+
+.sector-card::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f6f7fb);
+  z-index: 1;
+}
+
+
+.sector-card:hover {
+  transform: perspective(900px) rotateX(8deg) translateY(-16px);
+  box-shadow: 0 30px 70px rgba(37, 117, 252, 0.35);
+}
+
+.sector-card:hover::before {
+  opacity: 1;
+}
+
+
+.sector-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 2;
+
+  filter: grayscale(100%) brightness(0.7);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.sector-card:hover .sector-icon {
+  filter: none;
+  transform: translateZ(40px) scale(1.25);
+}
+
+.sector-icon::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(37, 117, 252, 0.45),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.sector-card:hover .sector-icon::after {
+  opacity: 1;
+}
+
+
+.sector-card p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  z-index: 2;
+  transform: translateY(6px);
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.sector-card:hover p {
+  transform: translateY(0);
+  color: #14154a;
+}
+
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+
+.sector-card {
+  margin-bottom: 24px;  
+}
+
+
+.expertise-section .row {
+  row-gap: 32px;    
+} */

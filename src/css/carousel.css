@@ -1,0 +1,813 @@
+/* AJS CLOUD â€” complete carousel.css
+   Responsive banner with visible CTA panel above the image (no text overlap).
+   The quote popup styles and behavior are preserved.
+*/
+.hero-carousel {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #0e1116;
+  overflow: hidden;
+}
+
+/* Important: no fixed 90vh carousel height; it distorted/cropped the banner. */
+.hero-carousel #heroCarousel,
+.hero-carousel #heroCarousel .carousel-inner,
+.hero-carousel #heroCarousel .carousel-item,
+.hero-carousel .hero-image-wrap {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+}
+.hero-carousel #heroCarousel .carousel-item { position: relative; }
+.hero-carousel #heroCarousel .carousel-item::before { content: none; }
+.hero-carousel .hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+}
+/* Optional headings are only used for future slides without embedded text. */
+.hero-carousel .carousel-caption.hero-copy {
+  position: absolute;
+  z-index: 1;
+  left: 8%;
+  right: 8%;
+  top: auto;
+  bottom: 10%;
+  width: auto;
+  max-width: none;
+  padding: 0;
+  transform: none;
+  text-align: left;
+}
+.hero-carousel .hero-copy h2 { font-size: clamp(1.5rem, 3vw, 3.5rem); font-weight: 700; }
+.hero-carousel .hero-copy p { font-size: clamp(1rem, 1.4vw, 1.3rem); }
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next { z-index: 3; width: 6%; }
+
+/* CTA panel above the artwork: visible without scrolling. */
+.hero-carousel .hero-action-bar {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(105deg, #141b25, #20252d);
+  border-top: 1px solid rgba(255,255,255,.12);
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
+.hero-carousel .hero-action-inner {
+  width: min(calc(100% - 64px), 1280px);
+  min-height: 82px;
+  margin: 0 auto;
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.hero-carousel .hero-action-copy { min-width: 0; }
+.hero-carousel .hero-action-eyebrow {
+  display: block;
+  color: #ffb044;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+.hero-carousel .hero-action-copy p {
+  margin: 7px 0 0;
+  color: #f2f5f8;
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.hero-carousel .hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  position: static;
+  transform: none;
+}
+.hero-carousel .hero-buttons .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 182px;
+  height: 49px;
+  margin: 0;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  opacity: 1;
+  transform: none;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.hero-carousel .hero-buttons .btn:hover { transform: translateY(-2px); }
+.hero-carousel .hero-buttons .btn:focus-visible { outline: 3px solid #ffb044; outline-offset: 3px; }
+.hero-carousel .hero-hire-btn,
+.hero-carousel .hero-hire-btn:visited {
+  background: #f4a12b;
+  border-color: #f4a12b;
+  color: #15171b;
+}
+.hero-carousel .hero-hire-btn:hover {
+  background: #ffb74d;
+  border-color: #ffb74d;
+  color: #15171b;
+}
+.hero-carousel .hero-quote-btn {
+  background: transparent;
+  border-color: rgba(255,255,255,.75) !important;
+  color: #fff;
+}
+.hero-carousel .hero-quote-btn:hover {
+  background: rgba(255,255,255,.12);
+  border-color: #fff !important;
+  color: #fff;
+}
+@media (max-width: 767.98px) {
+  .hero-carousel .hero-action-inner {
+    width: min(calc(100% - 32px), 540px);
+    min-height: 0;
+    padding: 22px 0 26px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+  .hero-carousel .hero-action-copy { text-align: center; }
+  .hero-carousel .hero-buttons { justify-content: center; }
+  .hero-carousel .hero-buttons .btn { flex: 1 1 160px; min-width: 0; }
+}
+@media (max-width: 420px) {
+  .hero-carousel .hero-buttons { flex-direction: column; }
+  .hero-carousel .hero-buttons .btn { width: 100%; flex: none; }
+}
+
+/* REQUEST A QUOTE POPUP â€” original styles retained below */
+.quote-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 999999;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  animation: quoteFadeIn 0.25s ease;
+
+}
+
+.quote-popup {
+
+  position: relative;
+
+  width: 100%;
+
+  max-width: 635px;
+
+  max-height: 94dvh;
+
+  min-height: 650px;
+
+  overflow-y: auto;
+
+  background: #fff;
+
+  color: #193c50;
+
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+
+  animation: quoteSlideUp 0.3s ease;
+
+}
+
+.quote-close {
+
+  position: absolute;
+
+  top: 12px;
+
+  right: 15px;
+
+  z-index: 10;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 36px;
+
+  height: 36px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #333;
+
+  font-size: 28px;
+
+  font-weight: 400;
+
+  cursor: pointer;
+
+}
+
+.quote-close:hover {
+
+  color: #46a6a7;
+
+}
+
+.quote-content {
+
+  width: 100%;
+
+  max-width: 455px;
+
+  margin: 0 auto;
+
+  padding: 105px 15px 90px;
+
+}
+
+.quote-title {
+
+  margin: 0;
+
+  color: #193d51;
+
+  font-family: Georgia, serif;
+
+  font-weight: 900;
+
+  font-size: 33px;
+
+  line-height: 1.2;
+
+  text-align: center;
+
+  letter-spacing: -1px;
+
+}
+
+.quote-subtitle {
+
+  margin: 50px 0 44px;
+
+  color: #666;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  text-align: center;
+
+}
+
+/* ==========================================
+
+   STEP INDICATORS
+
+========================================== */
+
+.quote-steps {
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 30px;
+
+}
+
+.quote-step {
+
+  flex: 0 0 30px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 30px;
+
+  height: 30px;
+
+  border: 1px solid #193d51;
+
+  background: #fff;
+
+  color: #193d51;
+
+  font-size: 12px;
+
+}
+
+.quote-step.active {
+
+  background: #46a6a7;
+
+  color: #fff;
+
+  border-color: #46a6a7;
+
+}
+
+.quote-step-line {
+
+  flex: 1;
+
+  height: 1px;
+
+  margin: 0 5px;
+
+  background: #bdc4c8;
+
+}
+
+/* ==========================================
+
+   FORM FIELDS
+
+========================================== */
+
+.quote-form-step h3 {
+
+  margin: 0 0 30px;
+
+  color: #193d51;
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.5px;
+
+}
+
+.quote-form-step > input,
+
+.quote-form-step > textarea,
+
+.quote-form-step > select {
+
+  display: block;
+
+  box-sizing: border-box;
+
+  width: 100%;
+
+  margin-bottom: 16px;
+
+  border: 1px solid #193d51;
+
+  border-radius: 0;
+
+  padding: 15px 20px;
+
+  background: #fff;
+
+  color: #193d51;
+
+  font-family: inherit;
+
+  font-size: 17px;
+
+  outline: none;
+
+}
+
+.quote-form-step > input {
+
+  height: 60px;
+
+}
+
+.quote-form-step > textarea {
+
+  min-height: 110px;
+
+  resize: vertical;
+
+}
+
+.quote-form-step input::placeholder,
+
+.quote-form-step textarea::placeholder {
+
+  color: #8095a4;
+
+  opacity: 1;
+
+}
+
+.quote-form-step input:focus,
+
+.quote-form-step textarea:focus,
+
+.quote-form-step select:focus {
+
+  border-color: #46a6a7;
+
+  box-shadow: 0 0 0 2px rgba(70,166,167,0.12);
+
+}
+
+.quote-services {
+
+  height: 104px;
+
+  padding: 8px 20px !important;
+
+  overflow-y: auto;
+
+}
+
+.quote-services option {
+
+  padding: 2px 3px;
+
+  font-size: 16px;
+
+}
+
+.quote-help {
+
+  margin: -7px 0 14px;
+
+  color: #687c89;
+
+  font-size: 11px;
+
+}
+
+.quote-file {
+
+  margin: 10px 0 20px;
+
+}
+
+.quote-file input {
+
+  width: 100%;
+
+  max-width: 100%;
+
+  color: #193d51;
+
+  font-size: 15px;
+
+}
+
+.quote-date-time {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+}
+
+.quote-field label {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #193d51;
+
+  font-size: 12px;
+
+}
+
+.quote-field input {
+
+  box-sizing: border-box;
+
+  width: 100%;
+
+  height: 60px;
+
+  padding: 9px;
+
+  border: 1px solid #193d51;
+
+  border-radius: 0;
+
+  background: #fff;
+
+  color: #193d51;
+
+  font-size: 14px;
+
+  color-scheme: light;
+
+}
+
+.quote-captcha {
+
+  min-height: 80px;
+
+  margin: 10px 0 18px;
+
+}
+
+.quote-captcha > p {
+
+  color: #687c89;
+
+  font-size: 13px;
+
+}
+
+/* ==========================================
+
+   FORM BUTTONS
+
+========================================== */
+
+.quote-actions {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 15px;
+
+}
+
+.quote-actions.end {
+
+  justify-content: flex-end;
+
+}
+
+.quote-primary-btn {
+
+  display: inline-flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  min-width: 132px;
+
+  height: 51px;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 0;
+
+  background: #46a6a7;
+
+  color: #fff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+
+}
+
+.quote-primary-btn:hover {
+
+  background: #318f91;
+
+}
+
+.quote-primary-btn:disabled {
+
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+}
+
+.quote-back-btn {
+
+  border: none;
+
+  background: transparent;
+
+  color: #193d51;
+
+  font-size: 12px;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+}
+
+.quote-back-btn:hover {
+
+  color: #46a6a7;
+
+}
+
+/* ==========================================
+
+   MESSAGES
+
+========================================== */
+
+.quote-error {
+
+  margin-top: 16px;
+
+  color: #b42318;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+}
+
+.quote-success {
+
+  padding: 140px 35px;
+
+  text-align: center;
+
+}
+
+.quote-success h2 {
+
+  color: #193d51;
+
+}
+
+.quote-success p {
+
+  color: #657785;
+
+  margin: 20px 0;
+
+}
+
+.quote-success-icon {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 65px;
+
+  height: 65px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+
+  background: #46a6a7;
+
+  color: white;
+
+  font-size: 32px;
+
+}
+
+/* ==========================================
+
+   ANIMATIONS
+
+========================================== */
+
+@keyframes quoteFadeIn {
+
+  from { opacity: 0; }
+
+  to { opacity: 1; }
+
+}
+
+@keyframes quoteSlideUp {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+
+/* Modal-only responsive rules (do not affect hero layout). */
+@media (max-width: 768px) {
+  .quote-overlay { padding: 12px; }
+  .quote-popup { max-width: 100%; max-height: 94dvh; min-height: 0; }
+  .quote-content { padding: 75px 22px 55px; }
+  .quote-title { font-size: 27px; }
+  .quote-subtitle { margin: 32px 0; }
+  .quote-form-step h3 { font-size: 18px; margin-bottom: 22px; }
+  .quote-form-step > input { height: 54px; }
+  .quote-date-time { grid-template-columns: 1fr; }
+  .quote-primary-btn { min-width: 115px; }
+}
+@media (max-width: 480px) {
+  .quote-overlay { padding: 8px; }
+  .quote-content { padding: 65px 15px 40px; }
+  .quote-title { font-size: 24px; }
+  .quote-actions { gap: 8px; }
+}
+
+
+/* FINAL BANNER FIT: show the ENTIRE source artwork, including service rows.
+   The source is relatively tall: filling a wide viewport would crop it.
+   Fit it inside the available screen height instead. */
+@media (min-width: 769px) {
+  .hero-carousel #heroCarousel,
+  .hero-carousel #heroCarousel .carousel-inner,
+  .hero-carousel #heroCarousel .carousel-item,
+  .hero-carousel #heroCarousel .hero-image-wrap {
+    height: min(680px, calc(100svh - 232px)) !important;
+    min-height: 340px;
+  }
+  .hero-carousel #heroCarousel .hero-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 80% 50%, #342317, #0b1018 65%);
+  }
+  .hero-carousel #heroCarousel img.hero-img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center;
+    filter: none !important;
+  }
+}
+/* On phones preserve the image proportions and allow vertical scrolling,
+   rather than shrinking small embedded text to an unreadable size. */
+@media (max-width: 768px) {
+  .hero-carousel #heroCarousel,
+  .hero-carousel #heroCarousel .carousel-inner,
+  .hero-carousel #heroCarousel .carousel-item,
+  .hero-carousel #heroCarousel .hero-image-wrap {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .hero-carousel #heroCarousel img.hero-img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    filter: none !important;
+  }
+}

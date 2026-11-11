@@ -1,0 +1,26 @@
+/* ===============================
+   LOGO NORMALIZATION (IMPORTANT)
+================================ */
+
+.logo-box {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible; /* 🔑 allow SVG to render */
+}
+
+.logo-box img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Optional: visual balance tweak */
+.center-card .logo-box {
+  height: 80px;
+}

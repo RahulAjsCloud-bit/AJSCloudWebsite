@@ -1,0 +1,43 @@
+
+
+
+    .onboarding-section {
+      background: #2596be;
+      width: 100%;
+    }
+
+    .onboarding-content {
+      padding: 80px 60px;
+    }
+
+    .onboarding-content .content-wrapper {
+      max-width: 520px;
+    }
+
+    .onboarding-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .onboarding-content {
+        padding: 50px 30px;
+        text-align: center;
+      }
+
+      .onboarding-content .content-wrapper {
+        max-width: 100%;
+      }
+    }
+
+
+
+
+
+
+
+
+

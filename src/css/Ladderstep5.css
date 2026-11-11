@@ -1,0 +1,41 @@
+/* ================================
+   FULL WIDTH FLOW CONTAINER
+================================ */
+
+.ladder-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.ladder-fluid {
+  width: 100%;
+  height: auto;
+  display: block; /* flow layout */
+}
+
+/* Image behavior */
+.ladder-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ================================
+   MOBILE – MAKE IT TALLER
+================================ */
+
+@media (max-width: 768px) {
+  .ladder-img {
+    min-height: 320px;     /* makes section visually bigger */
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .ladder-img {
+    min-height: 380px;     /* extra height for small phones */
+  }
+}

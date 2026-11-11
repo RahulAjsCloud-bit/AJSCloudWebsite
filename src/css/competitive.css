@@ -1,0 +1,175 @@
+.competitive-section {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.section-heading {
+  font-size: 32px;
+  font-weight: 600;
+  color: #0b1a44;
+}
+
+.adv-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 22px 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.adv-card img {
+  width: 40px;
+  margin-bottom: 12px;
+}
+
+.adv-card h5 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #0b1a44;
+  margin-bottom: 8px;
+}
+
+.adv-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+.adv-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.adv-image-wrapper img {
+  border-radius: 12px;
+}
+
+.btn-outline-primary {
+  padding: 8px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+/* spin icon */
+/* ================= ICON SPIN ON HOVER ================= */
+.spin-icon {
+  transition: transform 0.6s ease-in-out;
+  transform-origin: center;
+}
+
+/* Spin only icon when card is hovered */
+.adv-card:hover .spin-icon {
+  transform: rotate(360deg);
+}
+
+
+
+
+
+.adv-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.adv-card:hover {
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.18),
+    0 0 35px rgba(138, 43, 226, 0.25);
+  /* 💜 purple aura */
+}
+
+
+.adv-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(138, 43, 226, 0.45),
+      /* 💜 Purple wave */
+      transparent);
+  transform: skewX(-25deg);
+}
+
+.build-smarter-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #001a33, #0044ff);
+  text-align: center;
+  margin-top: 80px;
+  border-radius: 20px;
+}
+
+.build-smarter-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.build-smarter-content h2 {
+  font-size: 52px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.build-smarter-content p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+}
+
+.demo-btn {
+  background: #fff;
+  color: #0044ff;
+  border: none;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.demo-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .build-smarter-content h2 {
+    font-size: 36px;
+  }
+
+  .build-smarter-content p {
+    font-size: 18px;
+  }
+
+  .demo-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+.adv-card:hover::before {
+  animation: lightSweep 0.9s ease;
+}
+
+@keyframes lightSweep {
+  0% {
+    left: -75%;
+  }
+
+  100% {
+    left: 130%;
+  }
+
+
+}

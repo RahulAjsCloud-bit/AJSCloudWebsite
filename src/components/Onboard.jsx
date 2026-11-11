@@ -1,0 +1,46 @@
+import React from "react";
+import "../css/onboard.css";
+
+const Onboard = () => {
+  return (
+    <section id="onboarding" className="onboarding-section">
+      <div className="container-fluid px-0">
+        <div className="row g-0 align-items-center">
+          {/* LEFT CONTENT */}
+          <div className="col-12 col-md-6 onboarding-content">
+            <div className="content-wrapper">
+              <h2 className="fw-bold mb-3 text-white">
+                On Boarding With AJS
+
+              </h2>
+              <h3 className="fw-bold mb-3 text-white">
+                Switching Should Feel Like an Upgrade — Not an Ordeal
+              </h3>
+              <p className="mb-4 text-white">
+                Many businesses stay locked in outdated IT environments not because they want to but because change feels complicated. We make it simple.
+
+                Our onboarding process is collaborative, transparent, and fast. We study your existing infrastructure, understand your business goals, and bring a fresh strategic perspective alongside the technical firepower to execute it.
+
+                Whether you're migrating to the cloud for the first time, switching providers, or building something entirely new AJS Cloud is the partner that makes the transition smooth and the outcomes exceptional
+              </p>
+              {/* <a href="#" className="btn btn-light px-4 fw-semibold">
+                Learn More
+              </a> */}
+            </div>
+          </div>
+
+          {/* RIGHT IMAGE */}
+          <div className="col-12 col-md-6 onboarding-image">
+            <img
+              src="/images/stand on ladder.png"
+              alt="Onboarding AJS"
+              className="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Onboard;
